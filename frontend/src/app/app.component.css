@@ -1,5 +1,29 @@
 .mat-toolbar{
   background-color: rgb(94, 0, 157);
+  justify-content: space-around;
+}
+
+.searchInput{
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 7px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.searchBtn{
+  background-color: coral;
+}
+
+.avatar{
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png');
+  background-size: cover;
+  padding: 1.4rem;
+  border: 0.2px solid black;
+  border-radius: 2rem;
+  outline: none;
+  cursor: pointer;
 }
 
 h1{

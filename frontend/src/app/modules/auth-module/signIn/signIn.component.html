@@ -1,13 +1,20 @@
 <form class="authorizationForm-form" [formGroup]="authorizationForm">
-    <h1>Authorization Component</h1>
+    <h1>Authorization</h1>
     <div class="authorizationForm-form-signup-username">
-        <p>UserName</p>
-        <input formControlName="username">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput>
+        </mat-form-field>
     </div>
     <div class="authorizationForm-form-signup-password">
-        <p>Password</p>
-        <input formControlName="password">
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput>
+        </mat-form-field>
     </div>
-    <button (click)='signIn()'>Sign In</button>
-    <button (click)='redirectToSignUp()'>Sign Up</button>
+    <div class="buttonPanel">
+        <button mat-raised-button class="signInBtn" (click)="signIn()">Sign In</button>
+        <a class="toSignUpBtn" (click)="redirectToSignUp()">Don't have an account? Sign Up</a>
+    </div>
+
 </form>

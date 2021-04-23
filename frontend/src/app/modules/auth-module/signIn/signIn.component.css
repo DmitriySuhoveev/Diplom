@@ -1,0 +1,31 @@
+h1{
+    font-family: 'Orelega One', cursive;
+}
+.authorizationForm-form {
+    width: 20%;
+    margin: auto;
+    margin-top: 8%;
+    padding: 2rem;
+    text-align: center;
+    border: 0.5rem solid rgb(94, 0, 157);
+    border-radius: 0 0 20px 20px;
+    font-family: 'Orelega One', cursive;
+}
+
+.buttonPanel{
+    display: grid;
+}
+
+.signInBtn{
+    background-color: coral;
+    color: white;
+}
+
+.toSignUpBtn{
+    margin-top: 10px;
+}
+
+.toSignUpBtn:hover{
+    color: blue;
+    cursor: pointer;
+}
