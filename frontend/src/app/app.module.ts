@@ -1,4 +1,5 @@
-import { MainPageModule } from './modules/mainPage-module/main-page/main-page.module';
+import { MainPageService } from './modules/mainPage-module/mainPage-service/main-page.service';
+import { MainPageModule } from './modules/mainPage-module/main-page.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthModuleModule } from './modules/auth-module/auth.module';
 import { AuthService } from './modules/auth-module/auth-services/auth.service';
@@ -16,6 +17,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 export function tokenGetter(): any {
   return localStorage.getItem('JWT_TOKEN');
@@ -44,11 +48,13 @@ export function tokenGetter(): any {
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    NgbModule
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    MainPageService
   ],
   bootstrap: [AppComponent]
 })

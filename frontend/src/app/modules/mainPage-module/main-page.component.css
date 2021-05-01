@@ -1,0 +1,44 @@
+.main-div{
+    width: 100%;
+    height: auto;
+    /* background-image: url(../../../assets/images/background-image.jpg);
+    background-size: contain; */
+}
+
+.main-container{
+    width: 80%;
+    margin: auto;
+}
+
+.content-1{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* CAROUSEl */
+
+.carousel{
+    text-align: center;
+    height: 100%;
+    width: 35%;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    color: black !important;
+}
+
+.img-wrapper{
+    height: 100%;
+}
+
+/* APP-GRID-LIST */
+
+.app-grid-list{
+    margin-top: 1.8rem;
+}
+
+
+
+
+

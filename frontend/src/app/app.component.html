@@ -1,6 +1,6 @@
-<mat-toolbar class="mat-toolbar">
+<mat-toolbar *ngIf="condition" class="mat-toolbar">
     <h1>Movie Service</h1>
-    <div>
+    <div> 
         <input class="searchInput">
         <button mat-mini-fab color="accent" class="searchBtn">
             <mat-icon>search</mat-icon>
@@ -11,24 +11,6 @@
         <button mat-menu-item>Item 1</button>
         <button mat-menu-item>Item 2</button>
     </mat-menu>
-
-    
-
-    <!-- <button mat-icon-button class="example-icon" mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>menu</mat-icon>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-            <a routerLink="/auth/authorization">Авторизация</a>
-        </button>
-        <button mat-menu-item>
-            <a routerLink="/auth/registration">Регистрация</a>
-        </button>
-        <button mat-menu-item>
-            <a routerLink="/main">Main</a>
-        </button>
-
-    </mat-menu>
-    </button> -->
 </mat-toolbar>
 <router-outlet></router-outlet>
 

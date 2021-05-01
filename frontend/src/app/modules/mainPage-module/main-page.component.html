@@ -1,0 +1,24 @@
+<div class="main-div">
+    <div class="main-container">
+        <div class="content-1">
+            <ngb-carousel [interval]="8000" class="carousel">
+                <ng-template *ngFor="let currentPoster of currentMonthPosters" ngbSlide>
+                <div class="img-wrapper">
+                    <img height="620px" [src]="currentPoster" alt="This Month Releases">
+                </div>
+                </ng-template>
+            </ngb-carousel>
+                <app-grid-list class="app-grid-list" 
+                colsNum="3" 
+                rowNum="310px"  
+                [items]="trendingPosters"
+                [elements]="moviesInfo"
+                ></app-grid-list>
+        </div>
+        <div class="content-2">
+            <app-gallery-carousel></app-gallery-carousel>
+        </div>
+    </div>
+</div>
+
+<button (click)="logout()">Logout</button>

@@ -1,0 +1,24 @@
+.grid{
+    width: 700px;
+    height: 650px;
+}
+
+.mat-grid-tile{
+    background-size: cover !important;
+}
+
+.backdrop{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.backdrop:hover{
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.backdrop-info{
+    color: seashell;
+}
