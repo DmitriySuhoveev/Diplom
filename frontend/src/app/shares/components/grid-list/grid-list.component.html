@@ -1,14 +1,17 @@
 <div class="grid">
 <mat-grid-list cols="{{colsNum}}" rowHeight="{{rowNum}}" class="mat-grid-list">
-    <mat-grid-tile *ngFor="let item of items" class="mat-grid-tile"
-    style="background-image: url({{item}}); background-size: contain;">
-    <div class="backdrop">
-        <div class="backdrop-info" *ngFor="let elem in elements">
-            <div class="backdrop-title">{{elem.title}}</div>
-            <div class="backdrop-rating">{{elem.vote_average}}</div>
-            <div class="backdrop-rating">{{elem.releases_date}}</div>
+    <div *ngFor="let elem of elements">
+        <mat-grid-tile  class="mat-grid-tile"
+        style="background-image: url({{elem.poster}}); background-size: contain;">
+        <div class="backdrop">
+            <div class="backdrop-info">
+                <div class="backdrop-title">{{elem.title}}</div>
+                <div class="backdrop-release">{{elem.releaseDate}}</div>
+                <ngb-rating class="backdrop-rating" [rate]="elem.voteAverage" [readonly]=true></ngb-rating>
+            </div>
         </div>
+        </mat-grid-tile>
     </div>
-    </mat-grid-tile>
+
 </mat-grid-list>
 </div>

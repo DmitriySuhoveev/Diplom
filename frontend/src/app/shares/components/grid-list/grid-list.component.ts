@@ -9,13 +9,10 @@ export class GridListComponent implements OnInit {
 
   @Input() colsNum: string;
   @Input() rowNum: string;
-  @Input() items: string[];
   @Input() elements = [];
-
   constructor() { }
 
   ngOnInit(): void {
-    console.log(typeof(this.elements));
   }
 
 }

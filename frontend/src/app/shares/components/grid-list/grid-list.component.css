@@ -12,6 +12,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     opacity: 0;
+    text-align: left;    
 }
 
 .backdrop:hover{
@@ -21,4 +22,14 @@
 
 .backdrop-info{
     color: seashell;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 0 15px 15px;
+}
+
+.backdrop-rating{
+    font-size: 1.5rem;
+    color: coral;
 }

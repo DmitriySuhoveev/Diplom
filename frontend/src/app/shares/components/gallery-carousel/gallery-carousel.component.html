@@ -1,1 +1,16 @@
-<p>gallery-carousel works!</p>
+<div class="gallery">
+    <div class="gallery-description">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+    </div>
+    <div class="gallery-content">
+        <div ngbSlide *ngFor="let item of items" class="gallery-carousel-item">
+            <img mat-card-image [src]="item.poster" width="150px" height="220px" class="gallery-img">
+            <div class="gallery-backdrop">
+                <p>{{item.title}}</p>
+                <p>{{item.releaseDate}}</p>
+                <ngb-rating class="backdrop-rating" [rate]="item.voteAverage" [readonly]=true></ngb-rating>
+            </div>
+    </div>
+    </div>
+</div>
