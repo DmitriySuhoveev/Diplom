@@ -1,3 +1,4 @@
+import { PopUpModule } from './shares/components/pop-up/pop-up.module';
 import { MainPageService } from './modules/mainPage-module/mainPage-service/main-page.service';
 import { MainPageModule } from './modules/mainPage-module/main-page.module';
 import { JwtModule } from '@auth0/angular-jwt';

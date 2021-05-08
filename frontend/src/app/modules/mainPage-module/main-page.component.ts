@@ -29,14 +29,14 @@ export class MainPageComponent implements OnInit {
     this.getTrendingFunc();
     this.getPopularFunc();
     this.getUpcomingFunc();
-    this.getTopRatedFunc();
-    this.getHorrorsFunc();
-    this.getActionFunc();
-    this.getComedyFunc();
-    this.getDramaFunc();
-    this.getFantasyFunc();
-    this.getThrillerFunc();
-    this.getWarFunc();
+    // this.getTopRatedFunc();
+    // this.getHorrorsFunc();
+    // this.getActionFunc();
+    // this.getComedyFunc();
+    // this.getDramaFunc();
+    // this.getFantasyFunc();
+    // this.getThrillerFunc();
+    // this.getWarFunc();
   }
 
   getPopularFunc(): void{
@@ -73,7 +73,6 @@ export class MainPageComponent implements OnInit {
       this.topRatedMoviesInfo.splice(7);
     }));
   }
-
 
   getHorrorsFunc(): void{
     this.mainPageService.getHorrors()

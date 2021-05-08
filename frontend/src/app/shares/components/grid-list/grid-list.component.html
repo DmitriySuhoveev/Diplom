@@ -1,8 +1,8 @@
 <div class="grid">
 <mat-grid-list cols="{{colsNum}}" rowHeight="{{rowNum}}" class="mat-grid-list">
-    <div *ngFor="let elem of elements">
+    <div *ngFor="let elem of elements" (click)="openXl(elem.id)">
         <mat-grid-tile  class="mat-grid-tile"
-        style="background-image: url({{elem.poster}}); background-size: contain;">
+        style="background-image: url({{elem.poster}}); background-size: contain; cursor: pointer;">
         <div class="backdrop">
             <div class="backdrop-info">
                 <div class="backdrop-title">{{elem.title}}</div>
@@ -12,6 +12,5 @@
         </div>
         </mat-grid-tile>
     </div>
-
 </mat-grid-list>
 </div>
