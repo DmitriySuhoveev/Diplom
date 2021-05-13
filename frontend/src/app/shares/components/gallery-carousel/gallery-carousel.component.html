@@ -4,7 +4,7 @@
         <p>{{description}}</p>
     </div>
     <div class="gallery-content">
-        <div ngbSlide *ngFor="let item of items" class="gallery-carousel-item">
+        <div ngbSlide *ngFor="let item of items" class="gallery-carousel-item" (click)="openDialog(item.id)">
             <img mat-card-image [src]="item.poster" width="150px" height="220px" class="gallery-img">
             <div class="gallery-backdrop">
                 <p>{{item.title}}</p>

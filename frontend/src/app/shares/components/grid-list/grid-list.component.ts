@@ -1,6 +1,6 @@
 import { PopUpComponent } from './../pop-up/pop-up.component';
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-grid-list',
   templateUrl: './grid-list.component.html',
@@ -10,13 +10,18 @@ export class GridListComponent implements OnInit {
 
   @Input() colsNum: string;
   @Input() rowNum: string;
+  @Input() id: number;
   @Input() elements = [];
-  constructor(private modalService: NgbModal) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openXl(id: number): void {
-    this.modalService.open(PopUpComponent, { size: 'xl' });
+  openDialog(externalId: number): void {
+      const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '1300px',
+      height: '700px',
+      data: {id: externalId}
+    });
   }
 }

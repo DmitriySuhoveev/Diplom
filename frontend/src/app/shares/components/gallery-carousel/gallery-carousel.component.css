@@ -32,6 +32,7 @@ p{
 .gallery-carousel-item{
     position: relative;
     margin: 0 5px 0 5px;
+    cursor: pointer;
 }
 
 .gallery-backdrop{

@@ -7,8 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPageRoutingModule } from './main-page-routing.module';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { GridListModule } from '../../shares/components/grid-list/grid-list.module';
-
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [MainPageComponent],
   imports: [
@@ -17,7 +16,8 @@ import { GridListModule } from '../../shares/components/grid-list/grid-list.modu
     NgbCarouselModule,
     FormsModule,
     GridListModule,
-    GalleryCarouselModule
+    GalleryCarouselModule,
+    ScrollingModule
   ],
   providers: [MainPageService]
 })

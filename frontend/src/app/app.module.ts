@@ -19,6 +19,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -44,6 +45,7 @@ export function tokenGetter(): any {
     }),
     BrowserAnimationsModule,
     MainPageModule,
+    ScrollingModule,
 
     MatToolbarModule,
     MatIconModule,

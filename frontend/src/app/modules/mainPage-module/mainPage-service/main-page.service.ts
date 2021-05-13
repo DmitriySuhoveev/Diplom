@@ -66,4 +66,23 @@ export class MainPageService {
     return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=10752`);
   }
 
+  getMovieInfoById(externalId: number): Observable<any>{
+    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}?api_key=${this.API_TOKEN}`);
+  }
+
+  getMovieImagesById(externalId: number): Observable<any>{
+    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/images?api_key=${this.API_TOKEN}`);
+  }
+
+  getMovieReviewById(externalId: number): Observable<any>{
+    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/reviews?api_key=${this.API_TOKEN}`);
+  }
+
+  getCreditsMovieById(externalId: number): Observable<any>{
+    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/credits?api_key=${this.API_TOKEN}`);
+  }
+
+  getSimilarMoviesById(externalId: number): Observable<any>{
+    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/similar?api_key=${this.API_TOKEN}`);
+  }
 }

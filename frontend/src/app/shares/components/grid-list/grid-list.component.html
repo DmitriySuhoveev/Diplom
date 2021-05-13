@@ -1,6 +1,6 @@
 <div class="grid">
 <mat-grid-list cols="{{colsNum}}" rowHeight="{{rowNum}}" class="mat-grid-list">
-    <div *ngFor="let elem of elements" (click)="openXl(elem.id)">
+    <div *ngFor="let elem of elements" (click)="openDialog(elem.id)">
         <mat-grid-tile  class="mat-grid-tile"
         style="background-image: url({{elem.poster}}); background-size: contain; cursor: pointer;">
         <div class="backdrop">
