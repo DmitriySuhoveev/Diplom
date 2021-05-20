@@ -1,22 +1,29 @@
 <div class="pop-up" *ngFor="let elem of elements">
   <div class="pop-up-nav">
     <h2 mat-dialog-title>{{elem.title}}</h2>
-    <button mat-raised-button mat-dialog-close color="warn">Close</button>
+    <div class="nav-controll">
+      <button mat-raised-button mat-dialog-close color="warn">Close</button>
+      <button mat-raised-button (click)="onCloseAll()" color="warn">Close All</button>
+    </div>
   </div>
 <div class="mat-typography">
   <div class="content">
-    <div class="poster"><img class="img" [src]="elem.poster"></div>
+    <div class="poster">
+      <img *ngIf="checkPoster(elem.poster) == null" class="img" src="../../../../assets/images/unknown-avatar.png">
+      <img *ngIf="checkPoster(elem.poster) !== null" class="img" [src]="elem.poster">
+    </div>
     <div class="movie-info">
       <ul class="ul">
         <li *ngIf="!elem.adult"><b>Adult: </b>No Adult</li>
         <li *ngIf="elem.adult"><b>Adult: </b>Adult</li>
-        <li><b>Budget: </b>{{elem.budget}}$</li>
+        <li *ngIf="elem.budget == 0"><b>Budget: </b>No information</li>
+        <li *ngIf="elem.budget > 0"><b>Budget: </b>{{elem.budget}}$</li>
         <li><b>Genres: </b>{{elem.getGenres()}}</li>
         <li><b>Overview: </b>{{elem.overview}}</li>
         <li><b>Companies: </b>{{elem.getCompanies()}}</li>
         <li><b>Countries: </b>{{elem.getCountries()}}</li>
         <li><b>Original Title: </b>{{elem.original_title}}</li>
-        <li><b>Actors: </b> <p *ngFor="let item of casts">{{item.character}}: {{item.name}}</p></li>
+        <li><b>Actors: </b> <div *ngFor="let item of casts"><p>{{item.character}} {{item.name}}</p></div></li>
         <li><b>Release Date: </b>{{elem.release_date}}</li>
         <li><b>Runtime: </b>{{elem.runtime}} minutes</li>
         <li><b>Status: </b>{{elem.status}}</li>

@@ -4,8 +4,9 @@
         <p>{{description}}</p>
     </div>
     <div class="gallery-content">
-        <div ngbSlide *ngFor="let item of items" class="gallery-carousel-item" (click)="openDialog(item.id)">
-            <img mat-card-image [src]="item.poster" width="150px" height="220px" class="gallery-img">
+        <div ngbSlide *ngFor="let item of items" class="gallery-carousel-item" pointer-events:none (click)="openDialog(item.id)">
+            <img *ngIf="checkPoster(item.poster) == null" mat-card-image src="../../../../assets/images//no-movie-background.jpg" width="148px" height="220px" class="gallery-img">
+            <img *ngIf="checkPoster(item.poster) !== null" mat-card-image [src]="item.poster" width="148px" height="220px" class="gallery-img">
             <div class="gallery-backdrop">
                 <p>{{item.title}}</p>
                 <p>{{item.releaseDate}}</p>

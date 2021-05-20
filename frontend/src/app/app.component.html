@@ -1,12 +1,7 @@
 <mat-toolbar *ngIf="condition" class="mat-toolbar">
-    <h1>Movie Service</h1>
-    <div> 
-        <input class="searchInput">
-        <button mat-mini-fab color="accent" class="searchBtn">
-            <mat-icon>search</mat-icon>
-        </button>
-    </div>
-    <button mat-raised-button (click)="logout()">LogOut</button>
+    <h1 (click)="toMain()">Movie Service</h1>
+    <h2 (click)="navigateToSearch()">Search by Keyword</h2>
+    <button mat-raised-button color="warn" (click)="logout()">LogOut</button>
 </mat-toolbar>
 <router-outlet></router-outlet>
 

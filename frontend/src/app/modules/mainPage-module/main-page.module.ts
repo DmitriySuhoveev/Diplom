@@ -8,6 +8,8 @@ import { MainPageRoutingModule } from './main-page-routing.module';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { GridListModule } from '../../shares/components/grid-list/grid-list.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterModule } from '../../shares/components/footer/footer.module';
 @NgModule({
   declarations: [MainPageComponent],
   imports: [
@@ -17,7 +19,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     FormsModule,
     GridListModule,
     GalleryCarouselModule,
-    ScrollingModule
+    ScrollingModule,
+    NgbAccordionModule,
+    FooterModule
   ],
   providers: [MainPageService]
 })

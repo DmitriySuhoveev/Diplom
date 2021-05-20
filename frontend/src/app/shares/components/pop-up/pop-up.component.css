@@ -18,6 +18,10 @@ li{
     padding: 5px 0px 5px 0px;
 }
 
+button{
+    margin-left: 5px;
+}
+
 .img{
     width: 400px;
     height: 600px;

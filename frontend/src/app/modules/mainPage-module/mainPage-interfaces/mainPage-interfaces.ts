@@ -15,3 +15,11 @@ export interface UpcomingBackdropInfo{
     poster: string;
 }
 
+export interface SearchPost {
+    id: number;
+    title: string;
+    releaseDate: string;
+    poster: string;
+    voteAverage: number;
+}
+

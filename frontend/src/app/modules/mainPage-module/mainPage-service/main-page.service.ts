@@ -2,7 +2,7 @@ import { config } from './../../../config';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { MovieBackdropInfo, UpcomingBackdropInfo, SearchPost} from '../mainPage-interfaces/mainPage-interfaces';
 export interface Poster{
   name: string;
   poster: string;
@@ -17,7 +17,6 @@ export class MainPageService {
 
   constructor(private http: HttpClient) { }
 
-
   createSession(): Observable<any>{
     return this.http.get<any>(`${config.baseMovieDbUrl}/authentication/guest_session/new?api_key=c11ffc18ef425735c3f8d64caeb7eceb&language=ru`);
   }
@@ -27,62 +26,48 @@ export class MainPageService {
   }
 
   getPopular(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/popular?api_key=${this.API_TOKEN}&language=ru&region=RU`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/popular?api_key=${this.API_TOKEN}&language=ru&region=RU`);
   }
 
   getUpcoming(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/upcoming?api_key=${this.API_TOKEN}&language=ru&region=RU`);
+    return this.http.get<UpcomingBackdropInfo>(`${config.baseMovieDbUrl}/movie/upcoming?api_key=${this.API_TOKEN}&language=ru&region=RU`);
   }
 
   getTopRated(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/top_rated?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/top_rated?api_key=${this.API_TOKEN}`);
   }
 
-  getHorrors(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=27`);
-  }
-
-  getAction(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=28`);
-  }
-
-  getComedy(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=35`);
-  }
-
-  getDrama(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=18`);
-  }
-
-  getFantasy(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=14`);
-  }
-
-  getThriller(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=53`);
-  }
-
-  getWar(): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=10752`);
+  getGenreMovies(genreID: number): Observable<any>{
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/discover/movie?api_key=${this.API_TOKEN}&with_genres=${genreID}`);
   }
 
   getMovieInfoById(externalId: number): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/${externalId}?api_key=${this.API_TOKEN}`);
   }
 
   getMovieImagesById(externalId: number): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/images?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/${externalId}/images?api_key=${this.API_TOKEN}`);
   }
 
   getMovieReviewById(externalId: number): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/reviews?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/${externalId}/reviews?api_key=${this.API_TOKEN}`);
   }
 
   getCreditsMovieById(externalId: number): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/credits?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/${externalId}/credits?api_key=${this.API_TOKEN}`);
   }
 
   getSimilarMoviesById(externalId: number): Observable<any>{
-    return this.http.get(`${config.baseMovieDbUrl}/movie/${externalId}/similar?api_key=${this.API_TOKEN}`);
+    return this.http.get<MovieBackdropInfo>(`${config.baseMovieDbUrl}/movie/${externalId}/similar?api_key=${this.API_TOKEN}`);
+  }
+
+  // Search Input Requests
+
+  getMovieByKeyword(query: string): Observable<any> {
+    return this.http.get<SearchPost>(`${config.baseMovieDbUrl}/search/movie?api_key=${this.API_TOKEN}&query=${query}&page=1`);
+  }
+
+  getPersonByKeyword(query: string): Observable<any> {
+    return this.http.get<SearchPost>(`${config.baseMovieDbUrl}/search/person?api_key=${this.API_TOKEN}&query=${query}&page=1`);
   }
 }

@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,6 +14,7 @@ export class GalleryCarouselComponent implements OnInit {
   @Input() items = [];
   @Input() title: string;
   @Input() description: string;
+  genreId: number;
 
   constructor(private dialog: MatDialog) { }
 
@@ -26,4 +28,13 @@ export class GalleryCarouselComponent implements OnInit {
     data: {id: externalId}
   });
 }
+
+  checkPoster(item: string): any {
+    const check = item.substr(-4, 4);
+    if (check === 'null'){
+      return null;
+    } else {
+      return item;
+    }
+  }
 }

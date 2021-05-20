@@ -11,52 +11,97 @@
                 <app-grid-list class="app-grid-list" colsNum="3" rowNum="310px"  [elements]="trendingMoviesInfo"></app-grid-list>
         </div>
         <div class="content-2">
-            <app-gallery-carousel [items]="upcomingMoviesInfo"
-            title="Upcoming Movies"
-            description="Find the latest new movies coming soon to theaters. Get the latest release dates, watch trailers, see photos, and discuss upcoming movies"
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="topRatedMoviesInfo"
-            title="Top-Rated Movies"
-            description="Find the latest new movies coming soon to theaters. Get the latest release dates, watch trailers, see photos, and discuss upcoming movies"
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="horrors"
-            title="Horrors"
-            description="The Movie Service put together this list of the 100 Greatest Horror Movies of All-Time to celebrate these intensely primal, personal films."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="actions"
-            title="Actions"
-            description="Action films is genre in which the protagonist is thrust into a series of events that typically include violence, fighting, rescues and chases."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="comedy"
-            title="Comedy"
-            description="Funny comes in many forms. Romantic comedies, action comedies, black comedies, we've got all the best movies that will tickle your funny bone."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="drama"
-            title="Drama"
-            description="A list of the best Drama movies, as ranked by IMDb users, like you. Find something great to watch now."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="fantasy"
-            title="Fantasy"
-            description="Fantasy Movies, classic characters, legendary stories, animated adventures — these fantasy films will transport you to a wondrous realm of life."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="thriller"
-            title="Thriller"
-            description="The Best thrillers on Movie Service will get your heart racing from the comfort of your couch."
-            ></app-gallery-carousel>
-            <app-gallery-carousel [items]="war"
-            title="War"
-            description="Soldiers' stories have always captivated us, and for good reason. From classic war films to contemporary action sagas."
-            ></app-gallery-carousel>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Upcoming Movies">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="upcomingMoviesInfo"
+                        title="Upcoming Movies"
+                        description="Find the latest new movies coming soon to theaters. Get the latest release dates, watch trailers, see photos, and discuss upcoming movies"
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Top-Rated Movies">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="topRatedMoviesInfo"
+                        title="Top-Rated Movies"
+                        description="Find the latest new movies coming soon to theaters. Get the latest release dates, watch trailers, see photos, and discuss upcoming movies"
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Horrors">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="horrors"
+                        title="Horrors"
+                        description="The Movie Service put together this list of the 100 Greatest Horror Movies of All-Time to celebrate these intensely primal, personal films."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Actions">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="actions"
+                        title="Actions"
+                        description="Action films is genre in which the protagonist is thrust into a series of events that typically include violence, fighting, rescues and chases."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Comedy">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="comedy"
+                        title="Comedy"
+                        description="Funny comes in many forms. Romantic comedies, action comedies, black comedies, we've got all the best movies that will tickle your funny bone."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Drama">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="drama"
+                        title="Drama"
+                        description="A list of the best Drama movies, as ranked by IMDb users, like you. Find something great to watch now."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Fantasy">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="fantasy"
+                        title="Fantasy"
+                        description="Fantasy Movies, classic characters, legendary stories, animated adventures — these fantasy films will transport you to a wondrous realm of life."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="Thriller">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="thriller"
+                        title="Thriller"
+                        description="The Best thrillers on Movie Service will get your heart racing from the comfort of your couch."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+                <ngb-panel title="War">
+                    <ng-template ngbPanelContent>
+                        <app-gallery-carousel [items]="war"
+                        title="War"
+                        description="Soldiers' stories have always captivated us, and for good reason. From classic war films to contemporary action sagas."
+                        ></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
         </div>
     </div>
-    <div class="footer">
-        <div class="links">
-            <img class="icon" src="../../../assets/social/free-icon-vk-social-logotype-48965.svg">
-            <img class="icon" src="../../../assets/social/free-icon-instagram-social-network-logo-of-photo-camera-48898.svg">
-            <img class="icon" src="../../../assets/social/free-icon-facebook-logo-49052.svg">
-            <img class="icon" src="../../../assets/social/free-icon-linkedin-logo-49068.svg">
-            <img class="icon" src="../../../assets/social/telegram-logo.svg">
-        </div>
-        <div class="support">По всем вопросам обращаться на почту <b>dima.suhoveev@gmail.com</b></div>
-    </div>
+    <app-footer></app-footer>
 </div>

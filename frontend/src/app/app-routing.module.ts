@@ -8,7 +8,9 @@ const routes: Routes = [
   {path: 'auth', loadChildren: () => import('./modules/auth-module/auth.module')
   .then(m => m.AuthModuleModule)},
   {path: 'main', loadChildren: () => import ('./modules/mainPage-module/main-page.module')
-  .then(m => m.MainPageModule), canActivate: [AuthGuard]}
+  .then(m => m.MainPageModule), canActivate: [AuthGuard]},
+  {path: 'list', loadChildren: () => import('./modules/items-list/items-list.module')
+  .then(m => m.ItemsListModule), canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { MainPageService } from './../../../modules/mainPage-module/mainPage-service/main-page.service';
 import { Component, Input, OnInit, Optional, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { config } from './../../../config';
 @Component({
@@ -19,12 +19,16 @@ export class PopUpComponent implements OnInit {
   similar = [];
 
   constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any, private service: MainPageService,
-              private carouselConfig: NgbCarouselConfig) {
+              private carouselConfig: NgbCarouselConfig, public _dialog: MatDialog) {
   this.id = data.id;
   }
 
   ngOnInit(): void {
     this.getInfo();
+  }
+
+  public onCloseAll(): void {
+    this._dialog.closeAll();
   }
 
   getInfo(): void {
@@ -94,11 +98,19 @@ export class PopUpComponent implements OnInit {
         vote_average: elem.vote_average
       });
       this.similar.splice(7);
-      console.log(this.similar);
     }));
   }
 
   check(item): boolean {
     return (/https:\/\/secure.gravatar.com\/avatar/i.test(item));
+  }
+
+  checkPoster(item: string): any {
+    const check = item.substr(-4, 4);
+    if (check === 'null'){
+      return null;
+    } else {
+      return item;
+    }
   }
 }

@@ -29,14 +29,7 @@ export class MainPageComponent implements OnInit {
     this.getTrendingFunc();
     this.getPopularFunc();
     this.getUpcomingFunc();
-    // this.getTopRatedFunc();
-    // this.getHorrorsFunc();
-    // this.getActionFunc();
-    // this.getComedyFunc();
-    // this.getDramaFunc();
-    // this.getFantasyFunc();
-    // this.getThrillerFunc();
-    // this.getWarFunc();
+    this.getGenresFunc();
   }
 
   getPopularFunc(): void{
@@ -52,88 +45,57 @@ export class MainPageComponent implements OnInit {
     this.mainPageService.getTrending()
     .subscribe((result) => result.results.map((elem) => {
       this.currentMonthPosters.push(`${config.imageUrl}${elem.poster_path}`);
-      this.currentMonthPosters.splice(5);
     }));
   }
 
-  getUpcomingFunc(): void{
+  getUpcomingFunc(): void {
     this.mainPageService.getUpcoming()
     .subscribe((result) => result.results.map((elem) => {
       this.upcomingMoviesInfo.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`});
-      this.upcomingMoviesInfo.splice(7);
     }));
   }
 
-  getTopRatedFunc(): void{
+  getGenresFunc(): void {
     this.mainPageService.getTopRated()
     .subscribe((result) => result.results.map((elem) => {
       this.topRatedMoviesInfo.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.topRatedMoviesInfo.splice(7);
     }));
-  }
-
-  getHorrorsFunc(): void{
-    this.mainPageService.getHorrors()
+    this.mainPageService.getGenreMovies(27)
     .subscribe((result) => result.results.map((elem) => {
       this.horrors.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
-            poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.horrors.splice(7);
+        poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
     }));
-  }
-
-  getActionFunc(): void{
-    this.mainPageService.getAction()
+    this.mainPageService.getGenreMovies(28)
     .subscribe((result) => result.results.map((elem) => {
       this.actions.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.actions.splice(7);
     }));
-  }
-
-  getComedyFunc(): void{
-    this.mainPageService.getComedy()
+    this.mainPageService.getGenreMovies(35)
     .subscribe((result) => result.results.map((elem) => {
       this.comedy.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.comedy.splice(7);
     }));
-  }
-
-  getDramaFunc(): void{
-    this.mainPageService.getDrama()
+    this.mainPageService.getGenreMovies(18)
     .subscribe((result) => result.results.map((elem) => {
       this.drama.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.drama.splice(7);
     }));
-  }
-
-  getFantasyFunc(): void{
-    this.mainPageService.getFantasy()
+    this.mainPageService.getGenreMovies(14)
     .subscribe((result) => result.results.map((elem) => {
       this.fantasy.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.fantasy.splice(7);
     }));
-  }
-
-  getThrillerFunc(): void{
-    this.mainPageService.getThriller()
+    this.mainPageService.getGenreMovies(53)
     .subscribe((result) => result.results.map((elem) => {
       this.thriller.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.thriller.splice(7);
     }));
-  }
-
-  getWarFunc(): void{
-    this.mainPageService.getWar()
+    this.mainPageService.getGenreMovies(10752)
     .subscribe((result) => result.results.map((elem) => {
       this.war.push({id: elem.id, title: elem.title, releaseDate: elem.release_date,
         poster: `${config.imageUrl}${elem.poster_path}`, adult: null, voteAverage: elem.vote_average, overview: elem.overview});
-      this.war.splice(7);
     }));
   }
 

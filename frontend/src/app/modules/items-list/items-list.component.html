@@ -1,0 +1,54 @@
+<div class="items-list">
+    <div class="container">
+        <div class="input"> 
+            <input minlength="1" class="searchInput" placeholder="Find the Movie" [(ngModel)]="inputQuery">
+            <button mat-mini-fab color="accent" class="searchBtn" (click)="showListFunc()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <div *ngIf="searchMovieList == null" class="movies">
+            <ngb-accordion #acc="ngbAccordion"[closeOthers]="true">
+                <ngb-panel title="Movies" [disabled]="true">
+                    <ng-template ngbPanelContent></ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+        <div *ngIf="searchMovieList !== null" class="movies">
+            <ngb-accordion #acc="ngbAccordion"[closeOthers]="true">
+                <ngb-panel title="Movies">
+                    <ng-template ngbPanelContent>
+                        <div class="filter">
+                            <label>Choose Filter</label>
+                            <mat-radio-group aria-label="Select the Filter">
+                                <mat-radio-button value="1" (click)="filterByTitleFunc()">Title</mat-radio-button>
+                                <mat-radio-button value="2" (click)="filterByYearFunc()">Year</mat-radio-button>
+                                <mat-radio-button value="3" (click)="filterByRatingFunc()">Vote Average</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <app-gallery-carousel [items]="searchMovieList" (title)="inputQuery"></app-gallery-carousel>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+        <div *ngIf="searchActorsList == null" class="actors">
+            <ngb-accordion #acc="ngbAccordion"[closeOthers]="true">
+                <ngb-panel title="Actors" [disabled]="true"  class="actors-list">
+                    <ng-template ngbPanelContent></ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+        <div *ngIf="searchActorsList !== null" class="actors">
+            <ngb-accordion #acc="ngbAccordion"[closeOthers]="true">
+                <ngb-panel title="Actors">
+                    <ng-template ngbPanelContent>
+                        <div class="actors-list">
+                            <app-gallery-carousel [items]="searchActorsList" (title)="inputQuery"></app-gallery-carousel>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+

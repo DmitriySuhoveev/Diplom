@@ -12,11 +12,20 @@ export class AppComponent implements DoCheck {
 
   constructor(private authService: AuthService, private router: Router){}
 
-  checking(){
-    this.condition = this.authService.isLoggedIn();
-  }
   ngDoCheck(): void {
     this.checking();
+  }
+
+  checking(): void{
+    this.condition = this.authService.isLoggedIn();
+  }
+
+  navigateToSearch(): void{
+    this.router.navigate(['/list']);
+  }
+
+  toMain(): void {
+    this.router.navigate(['/main']);
   }
 
   logout(): void{

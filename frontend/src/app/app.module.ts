@@ -1,4 +1,5 @@
-import { PopUpModule } from './shares/components/pop-up/pop-up.module';
+import { FooterModule } from './shares/components/footer/footer.module';
+import { FormsModule } from '@angular/forms';
 import { MainPageService } from './modules/mainPage-module/mainPage-service/main-page.service';
 import { MainPageModule } from './modules/mainPage-module/main-page.module';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -19,9 +20,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-
-
+import { ItemsListModule } from './modules/items-list/items-list.module';
 
 export function tokenGetter(): any {
   return localStorage.getItem('JWT_TOKEN');
@@ -45,14 +44,16 @@ export function tokenGetter(): any {
     }),
     BrowserAnimationsModule,
     MainPageModule,
-    ScrollingModule,
+    ItemsListModule,
+    FooterModule,
 
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     AuthGuard,
