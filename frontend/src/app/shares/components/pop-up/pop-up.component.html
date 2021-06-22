@@ -23,7 +23,7 @@
         <li><b>Companies: </b>{{elem.getCompanies()}}</li>
         <li><b>Countries: </b>{{elem.getCountries()}}</li>
         <li><b>Original Title: </b>{{elem.original_title}}</li>
-        <li><b>Actors: </b> <div *ngFor="let item of casts"><p>{{item.character}} {{item.name}}</p></div></li>
+        <li><b>Actors: </b> <div *ngFor="let item of casts"><p><b>{{item.name}}</b> plays {{item.character}}</p></div></li>
         <li><b>Release Date: </b>{{elem.release_date}}</li>
         <li><b>Runtime: </b>{{elem.runtime}} minutes</li>
         <li><b>Status: </b>{{elem.status}}</li>
